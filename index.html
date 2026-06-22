@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> KVS PUBLIC SCHOOL</title>
+        <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header{
+            background-color: #004080;
+            color:white;
+            text-align: center;
+            padding:20px;
+
+        }
+        .nav{
+            background-color: #222;
+            overflow:hidden;
+            text-align: center;
+        }
+        .nav a{
+            color:white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .nav a:hover{
+            background-color: #0073e6;
+        }
+        .container{
+            padding: 20px;
+        }
+        .card{
+            background: white;
+            padding:15px;
+            margin:15px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+        form{
+           background: white;
+             padding: 20px;
+           border-radius: 10px;
+        }
+
+        input,select{
+          width:100%;
+          padding:8px;
+          margin:8px 0;  
+        }
+        button{
+            background: green;
+            color:white;
+            padding:10px;          
+            border:none;
+            cursor:pointer; 
+        }
+        button:hover{
+            background-color: darkgreen;
+        }
+      footer{
+            background: #2c3e50;
+            color:white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+
+        }
+        .social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.social-icon.facebook:hover {
+  background-color: #3b5998;
+}
+
+    </style>
+    </head>
+    <body>
+         <div class="social-icon">
+            <i class="fa-solid fa-school"></i>
+        </div>
+        <div class="header">
+          <h1> KVS PUBLIC SCHOOL</h1>
+          <P> Knopwledge is power</P>
+        </div>
+        <nav class="nav">
+            <a href="#">HOME</a>
+              <a href="#">ABOUT</a>
+                <a href="#">COURCES</a>
+                  <a href="#">CONTACT</a>
+        </nav>
+        <img src="school.jpg">
+        <div class="container">
+            <div class="card">
+                <h2> WELCOME TO OUR SCHOOL</h2>
+                <p> we provide quality education and encourage our school</p>
+        </div>
+        <div class="card">
+            <h2> FACULTIES</h2>
+            <ul>
+                <li> SMART CLASSROOMS</li>
+                <li> LIBRARY</li>
+                <li> SCIENCE LABS</li>
+                <li>  SPORTS GROUND</li>
+            </ul>
+        </div>
+        <H2> STUDENT REGISTRATION FORM </H2>
+        <form id="studentform">
+            <label>NAME:</label>
+            <input type="text" id="name" required>
+            <label>CLASS:</label>
+            <select id="class">
+                <option>6th</option>
+                <option>7th</option>
+                <option>8th</option>
+                <option>9th</option>
+                <option>10th</option>
+            </select>
+            <label> EMAIL:</label>
+        
+        <button type="submit"> REGISTER</button>
+        </form>
+        <p id="message"></p>
+        </div>
+        <div class="social-icon">
+         
+        </div>
+        <footer>
+            <p> KVS PUBLIC SCHOOL, MDU</p>
+        </footer>
+        <script>    
+            const form=document.getElementById("studentform");
+            form.addEventListener("submit",function(event){
+                event.preventDefault();
+                let name=document.getElementById("name").value;
+                document.getElementById("message").innerHTML="WELCOME" +  name+  "!REGISTRATION SUCCESSFULL";
+                alert("FROM SUBMITTED SUCESSFULLY");
+            });
+            const navlinks=document.querySelectorAll(".nav a");
+            navlinks.forEach(link=>{
+                link.addEventListener("click",function(){
+                    alert(this.innerText+"menu clicked");
+                });
+            })
+        </script>
+    </body>
+</html>
